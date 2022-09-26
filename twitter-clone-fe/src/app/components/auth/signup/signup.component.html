@@ -1,0 +1,21 @@
+<div class="signup-popup-container">
+    <div class="signup-popup-header">
+        <button class="close-button" routerLink="">X</button>
+        <img src="assets/images/twitter_logo.png" class="popup-logo">
+    </div>
+    <div class="popup-title">
+        <span class="popup-title-text">Join Twitter today</span>
+    </div>
+    <form [formGroup]="signupFormGroup" (ngSubmit)="signup()" ngNativeValidate>
+        <input formControlName="email" type="email" name="email" autocomplete="off" class="input" placeholder="Email" required>
+        <input formControlName="username" type="text" name="username" autocomplete="off" class="input" placeholder="Username" required minlength="3" maxlength="20">
+        <input formControlName="name" type="text" name="name" autocomplete="off" class="input" placeholder="Name" required minlength="3" maxlength="20">
+        <input formControlName="password" type="password" name="password" class="input" placeholder="Password" required minlength="6" maxlength="30">
+        <div class="dateOfBirth"><label>Date of birth: </label><input type="date" formControlName="dateOfBirth" required max="{{minDate | date:'yyyy-MM-dd'}}"></div>
+        
+        <button type="submit">Sign up</button>
+    </form>
+    <div class="extra-features">
+        <span class="extra-features-text">Already have an account? <a routerLink="/login">Log in</a></span>
+    </div>
+</div>

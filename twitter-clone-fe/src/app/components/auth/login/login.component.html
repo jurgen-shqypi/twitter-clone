@@ -1,0 +1,19 @@
+<div class="login-popup-container">
+    <div class="login-popup-header">
+        <button class="close-button" routerLink="">X</button>
+        <img src="assets/images/twitter_logo.png" class="popup-logo">
+    </div>
+    <div class="popup-title">
+        <span class="popup-title-text">Sign in to Twitter</span>
+    </div>
+    <form [formGroup]="loginFormGroup" (ngSubmit)="login()" ngNativeValidate>
+        <input formControlName="username" type="text" name="username" autocomplete="off" class="input" placeholder="Email or username" required>
+        <input formControlName="password" type="password" name="password" class="input" placeholder="Password" required>
+        <button type="submit">Log in</button>
+    </form>
+    <div class="extra-features">
+        <button (click)="loginAsTest()">Test drive an existing account</button>
+        <span class="extra-features-text">Don't have an account? <a href="/signup">Sign up</a></span>
+    </div>
+    
+</div>

@@ -1,0 +1,38 @@
+<div class="banner-container">
+    <router-outlet></router-outlet>
+    <div class="banner-logo">
+        <a routerLink="/home" class="banner-logo-link"><img src="assets/images/twitter-logo-white.png" class="banner-logo-img"></a>
+    </div>
+    <div class="banner-content">
+        <div class="links">
+            <a routerLink="/home">
+                <svg>
+                    <use href="assets/images/twitter-home-logo.svg#twitter-home-logo"/>
+                </svg>
+                Home    
+            </a>
+            <a routerLink="/bookmarks">
+                <svg>
+                    <use href="assets/images/twitter-bookmark-logo.svg#twitter-bookmark-logo"/>
+                </svg>
+                Bookmarks    
+            </a>
+            <a routerLink="/user/{{loggedInUser.username!}}">
+                <svg>
+                    <use href="assets/images/twitter-profile-logo.svg#twitter-profile-logo"/>
+                </svg>
+                Profile    
+            </a>
+            <a  routerLink="/settings">
+                <svg>
+                    <use href="assets/images/settings-icon.svg#settings-icon"/>
+                </svg>
+                Settings  
+            </a>
+        </div>
+        <div class="other">
+            <button (click)="openTweetDialog()">Tweet</button>
+            <a (click)="logout()">Log out</a>
+        </div>
+    </div>
+</div>

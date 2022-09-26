@@ -1,0 +1,26 @@
+
+<form [formGroup]="editProfileFormGroup" class="edit-container" (submit)="onSubmit()">
+    <div class="edit-header">
+        <button class="close-button" (click)="goBack()"><svg class="backIcon"><use  href="assets/images/back-icon.svg#back-icon"></use></svg></button>
+        <span>Edit profile</span>
+        <button type="submit" class="save-button">Save</button>
+    </div>
+    <div class="profile-photos">
+        <div class="header-pic">
+            <label for="headerImgUpload">
+                <input type="file" id="headerImgUpload" style="display: none;" accept="image/*" (input)="changePicture('headerPhoto', $event.target)">
+                <img src="{{editProfileFormGroup.get('headerPhoto')?.value}}" id="headerPhoto">
+            </label>
+        </div>
+        <div class="profile-pic">
+            <label for="profileImgUpload">
+                <input type="file" id="profileImgUpload" style="display: none;" accept="image/*" (input)="changePicture('profilePhoto', $event.target)">
+                <img src="{{editProfileFormGroup.get('profilePhoto')?.value}}" id="profilePhoto" >
+            </label>
+        </div>
+    </div>
+        <input type="text" name="name" autocomplete="off" class="input" placeholder="Name" formControlName="name">
+        <textarea [minLength]="3" placeholder="Description" maxlength="160" formControlName="description" ></textarea>
+        <input  type="text" name="location" class="input" placeholder="Location" formControlName="location"  >
+        <div class="dateOfBirth"><label>Date of birth: </label><input formControlName="dateOfBirth" type="date" max="{{todayDate | date:'yyyy-MM-dd'}}"></div>
+</form>

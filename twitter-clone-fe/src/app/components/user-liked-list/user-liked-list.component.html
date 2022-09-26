@@ -1,0 +1,13 @@
+<div class="user-likes-container">
+    <div class="user-likes-header">
+        <button class="close-button" (click)="this.dialogRef.close();">X</button>
+        <span>Likes</span>
+    </div>
+    <div class="results" *ngFor="let user of usersWhoLiked" routerLink="/user/{{user.username}}">
+        <img src="{{user.profilePicture}}">
+        <div class="details">
+            <span class="name">{{user.name}}</span>
+            <span class="username">@{{user.username}}</span>
+        </div>
+    </div>
+</div>

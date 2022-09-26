@@ -1,0 +1,8 @@
+<div class="main">
+    <div *ngIf="isLoggedIn == 'true'">
+        <app-landing-page></app-landing-page>
+    </div>
+    <div *ngIf="isLoggedIn == 'false' || isLoggedIn == null">
+        <app-auth></app-auth>
+    </div>
+</div>

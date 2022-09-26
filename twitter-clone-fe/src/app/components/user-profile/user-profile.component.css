@@ -1,0 +1,220 @@
+.user-profile {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    background-color: black;
+    border-left: 1px solid rgb(33, 35, 37);
+    border-right: 1px solid rgb(33, 35, 37);
+}
+
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0px;
+    height: 6%;
+    width:inherit;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 2;
+}
+
+.profile-header > span {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3vh;
+    padding-left: 30px;
+    padding-top: 10px;
+}
+
+.header-photo {
+    height: 30%;
+    width: 100%;
+}
+
+.header-photo > img {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.profile-photo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-profile-pic {
+    position: relative;
+    height: 150px;
+    margin-top: -5em;
+    margin-left: 2em;
+    border-radius: 50%;
+    border: 1px solid rgb(33, 35, 37);
+}
+
+.profile-photo > button {
+    margin-right: 2em;
+    height: 2.5rem;
+    width: 20%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+    border: 1px solid rgb(51, 54, 57);
+    border-radius: 30px 30px 30px 30px;
+    color: white;
+    font-size: 100%;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.profile-text {
+    margin-left: 3em;
+    margin-top: 1.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.name {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 1000;
+    font-size: 1.2em;
+}
+.username {
+    color: rgb(116, 119, 122);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.description {
+    margin-top: 1em;
+    font-size:0.9em;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header-info {
+    border-bottom: 1px solid rgb(33, 35, 37);
+    padding-bottom: 1em;
+}
+
+svg {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+svg > use {
+    fill: rgb(116, 119, 122);
+    width: 2em;
+}
+
+.more-info {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    gap: 2em;
+    margin-top: 2em;
+}
+
+
+.more-info > span {
+    color: rgb(116, 119, 122);
+    display: flex;
+    gap: 5px;
+}
+
+.post {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid rgb(33, 35, 37);
+}
+
+.post-info {
+    display: flex;
+    align-items: row;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.user-details {
+    color: white;
+    display: flex;
+}
+
+.poster-profile-pic > img {
+    position: relative;
+    height: 4em;
+    border-radius: 50%;
+    
+}
+
+.user-details > span {
+    padding-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+.poster-name {
+    font-weight: 650;
+}
+
+.poster-username {
+    color: rgb(116, 119, 122);
+    padding-left: 5px;
+}
+
+.date-posted {
+    padding-left: 15px;
+    color: rgb(116, 119, 122);
+}
+
+.post-text {
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.post-actions {
+    display: flex;
+    justify-content: space-around;
+}
+
+.post-actions > button {
+    all: unset;
+    cursor: pointer;
+}
+
+.image-container > img {
+    position: relative;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.loading-indicator {
+    left: 50%;
+    position:fixed;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+}
+
+.timelines {
+    display: flex;
+    color: white;
+    height: 3em;
+}
+
+.timelines > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    cursor: pointer;
+}
+
+.timelines > div:hover {
+    background-color: rgb(24, 25, 25);
+}
+

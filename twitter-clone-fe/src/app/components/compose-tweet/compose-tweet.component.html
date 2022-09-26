@@ -1,0 +1,21 @@
+<div class="post-container">
+    <div class="compose-popup-header">
+        <button class="close-button" (click)="this.dialogRef.close();">X</button>
+    </div>
+    <div class="compose-tweet-area">
+    <div class="profile-pic">
+        <img src="assets/images/profile-pic.jpg"/>
+    </div>
+        <form [formGroup]="composeTweetFormGroup" class="post-form" (ngSubmit)="composeTweet()" ngNativeValidate>
+            <textarea formControlName="description" cdkTextareaAutosize #autosize="cdkTextareaAutosize"cdkAutosizeMinRows="3" cdkAutosizeMaxRows="8" maxlength="250" placeholder="What's happening?"></textarea>
+            <img src="" id="post-picture">
+            <div class="post-submit">
+                <label for='tweetimgupload'>
+                    <input type="file" id="tweetimgupload" style="display: none;" accept="image/*"  (change)="onImageUploadTweet($event)"/>
+                    <svg><use href="assets/images/image-upload-icon.svg#image-upload-icon"></use></svg>
+                </label>    
+                <button type="submit">Tweet</button>
+            </div>
+        </form>
+    </div>
+</div>

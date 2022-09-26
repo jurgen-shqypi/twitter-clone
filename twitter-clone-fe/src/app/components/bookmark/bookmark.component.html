@@ -1,0 +1,8 @@
+<div class="bookmarks">
+    <div class="bookmarks-header">
+        <span>Bookmarks</span>
+    </div>
+    <div class="posts" *ngFor="let post of posts">
+        <app-post [post]="post"></app-post>
+    </div>
+</div>

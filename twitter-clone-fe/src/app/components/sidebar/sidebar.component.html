@@ -1,0 +1,19 @@
+<div class="sidebar-content">
+    <input type="text" placeholder="Search Twitter" autocomplete="off" (input)="searchUser($event.target)">
+    <div class="results" *ngFor="let user of userResults" routerLink="/user/{{user.username}}">
+            <img src="{{user.profilePicture}}">
+            <div class="details">
+                <span class="name">{{user.name}}</span>
+                <span class="username">@{{user.username}}</span>
+            </div>
+    </div>
+    <span class="text">Who to follow</span>
+    <div class="results most-followed" *ngFor="let user of mostFollowedUsersResults" routerLink="/user/{{user.username}}">
+        <img src="{{user.profilePicture}}">
+        <div class="details">
+            <span class="name">{{user.name}}</span>
+            <span class="username">@{{user.username}}</span>
+        </div>
+    </div>
+    
+</div>

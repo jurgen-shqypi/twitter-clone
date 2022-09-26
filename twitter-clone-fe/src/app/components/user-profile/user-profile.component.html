@@ -1,0 +1,59 @@
+<div *ngIf="!userArrived" class="loading-indicator">
+    <mat-spinner style="margin:auto;"></mat-spinner>
+</div>
+<div class="user-profile" *ngIf="userArrived">
+    <div class="profile-header">
+        <span>{{user.username}}</span>
+    </div>
+    <div class="header-photo">
+        <img src="{{user.headerPicture}}" class="header-background-photo">
+    </div>
+    <div class="header-info">
+        <div class="profile-photo">
+            <img src="{{user.profilePicture}}" class="header-profile-pic">
+            <button *ngIf="user.username === loggedInUser; else showFollow" routerLink="/edit/profile">Edit profile</button>
+            <ng-template #showFollow><button *ngIf="!user.following; else showAlreadyFollowing" (click)="followUser(user.username)">Follow</button></ng-template>
+            <ng-template #showAlreadyFollowing><button (click)="unfollowUser(user.username)">Following</button></ng-template>
+        </div>
+        <div class="profile-info">
+            <div class="profile-text">
+                <span class="name">{{user.name}}</span>
+                <span class="username">@{{user.username}}</span>
+                <span class="description">{{user.description}}</span>
+                <div class="more-info">
+                    <span *ngIf="user.location != null && user.location != ''">
+                        <svg>
+                            <use href="assets/images/location-icon.svg#location-icon"/>
+                        </svg>
+                        Location : {{user.location}}
+                    </span>
+                    <span *ngIf="user.dateOfBirth != null">
+                        <svg>
+                            <use href="assets/images/birthday-icon.svg#birthday-icon"/>
+                        </svg>
+                        Birthday : {{user.dateOfBirth | date:'yyyy-MM-dd'}}
+                    </span>
+                    <span *ngIf="user.dateOfCreation != null">
+                        <svg>
+                            <use href="assets/images/calendar-icon.svg#calendar-icon"/>
+                        </svg>
+                        Joined: {{user.dateOfCreation | date:'yyyy-MM-dd'}}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="!postsArrived" class="loading-indicator">
+        <mat-spinner></mat-spinner>
+    </div>
+    <div class="post-container" *ngIf="postsArrived">
+        <div class="timelines">
+            <div class="tweets" (click)="getTweets()">Tweets</div>
+            <div class="likes" (click)="getLikes()">Likes</div>
+        </div>
+        <div *ngFor="let post of posts; let i = index;" class="posts" >
+            <app-post [post]="post"></app-post>
+        </div>
+    </div>
+    <div></div>
+</div>

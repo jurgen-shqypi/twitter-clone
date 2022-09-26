@@ -1,0 +1,24 @@
+<div class="home">
+    <div class="home-header">
+        <span>Home</span>
+    </div>
+    <div class="post-area">
+        <div class="profile-pic">
+            <img src="assets/images/profile-pic.jpg"/>
+        </div>
+        <form [formGroup]="postFormGroup" class="post-form" (ngSubmit)="postTweet()" ngNativeValidate>
+            <textarea formControlName="description" cdkTextareaAutosize #autosize="cdkTextareaAutosize"cdkAutosizeMinRows="1" cdkAutosizeMaxRows="8" maxlength="250" placeholder="What's happening?" required></textarea>
+            <img src="" id="post-pic">
+            <div class="post-submit">
+                <label for='imgupload'>
+                    <input type="file" id="imgupload" style="display: none;" accept="image/*"  (change)="onImageUpload($event)"/>
+                    <svg><use href="assets/images/image-upload-icon.svg#image-upload-icon"></use></svg>
+                </label>    
+                <button type="submit">Tweet</button>
+            </div>
+        </form>
+    </div>
+        <div class="posts" *ngFor="let post of posts">
+            <app-post [post]="post"></app-post>
+        </div>
+</div>

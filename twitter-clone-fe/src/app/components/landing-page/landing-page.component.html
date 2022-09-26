@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="banner">
+        <app-banner></app-banner>
+    </div>
+    <div class="primary-column" *ngIf="router.url.includes('user/')">
+        <app-user-profile></app-user-profile>
+    </div>
+    <div class="primary-column" *ngIf="router.url.includes('edit/profile')">
+        <app-edit-profile></app-edit-profile>
+    </div>
+    <div class="primary-column" *ngIf="router.url.includes('bookmarks')">
+        <app-bookmark></app-bookmark>
+    </div>
+    <div class="primary-column" *ngIf="router.url.includes('settings')">
+        <app-settings></app-settings>
+    </div>
+    <div class="primary-column" *ngIf="router.url.includes('post/')">
+        <app-post-details></app-post-details>
+    </div>
+    <div class="primary-column" *ngIf="router.url.includes('home')">
+        <app-home></app-home>
+    </div>
+    <div class="sidebar">
+        <app-sidebar></app-sidebar>
+    </div>
+</div>

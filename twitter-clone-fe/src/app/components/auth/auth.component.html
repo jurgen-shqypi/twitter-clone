@@ -1,0 +1,35 @@
+<div class="container">
+        <div class="login-popup" id="login-popup-id" *ngIf="router.url.includes('login')">
+            <app-login class="login-popup-content"></app-login>
+        </div>
+        <div class="login-popup" id="login-popup-id" *ngIf="router.url.includes('signup')">
+            <app-signup class="login-popup-content"></app-signup>
+        </div>
+    <div class="main-image">
+        <img src="assets/images/twitter_login_img.png" class="login-img">
+        <img src="assets/images/twitter-login-logo.png" class="login-logo-img">
+    </div>
+    <div class="auth">
+        <div class="header-img">
+            <img src="assets/images/twitter_logo.png" class="logo-img">
+        </div>
+        <div class="main-title">
+            <span class="content">Happening now</span>
+        </div>
+        <div class="secondary-title">
+            <span class="content">Join Twitter today.</span>
+        </div>
+        <div class="login">
+            <button routerLink="/signup">Sign up</button>
+            <button routerLink="/login">Sign in / Test</button>
+        </div>
+        <footer class="footer">
+            <span>Developed by Jurgen Shqypi </span>
+            <a href="https://github.com/jurgen-shqypi" target="_blank">
+                <img src="assets/images/github-icon.png">
+            </a>
+        </footer>
+    </div>
+    
+</div>  
+

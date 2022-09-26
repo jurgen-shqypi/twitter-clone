@@ -1,0 +1,108 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    border-left: 1px solid rgb(33, 35, 37);
+    border-right: 1px solid rgb(33, 35, 37);
+}
+
+.home-header {
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0px;
+    height: 6%;
+    width:inherit;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.home-header > span {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3vh;
+    padding-left: 30px;
+    padding-top: 10px;
+}
+
+.post-area {
+    height: fit-content;
+    width:inherit;
+    background-color: black;
+    display: flex;
+    border-bottom: 1px solid rgb(33, 35, 37);
+}
+
+.profile-pic {
+    width: 15%;
+    height: 100%;
+}
+
+.profile-pic > img{
+    position: relative;
+    width: 60%;
+    border-radius: 50%;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.post-form {
+    width: 85%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    
+}
+
+.post-form > textarea {
+    margin-top: 10px;
+    width: 90%;
+    font-size: 20px;
+    overflow: hidden;
+    border: none;
+    outline: none;
+    padding: 0px;
+    resize: none;
+    overflow: hidden;
+    box-shadow: none;
+    color: white;
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.post-submit {
+    display: flex;
+    justify-content: space-between;
+}
+
+.post-submit > button {
+    align-self: flex-end;
+    margin-right: 3rem;
+    margin-bottom: 1rem;
+    height: 3rem;
+    width: 20%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(29,155,240);
+    border-radius: 30px 30px 30px 30px;
+    color: white;
+    font-size: 100%;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+svg{
+
+    position: relative;
+    width: 2em;
+    height: 2em;
+    fill: #1D9BF0;
+}
+
+#post-pic {
+    position: relative;
+    width: 95%;
+    height: fit-content;
+    display: none;
+}

@@ -1,0 +1,39 @@
+<div class="post" routerLink="/post/{{post.postId}}">
+    <div class="post-info">
+        <div class="poster-profile-pic">
+            <img src="assets/images/profile-pic.jpg" routerLink="/user/{{post.userDTO.username}}">
+        </div>
+        <div class="post-text">
+            <div class="user-details">
+                <span class="poster-name" routerLink="/user/{{post.userDTO.username}}">{{post.userDTO.name}}</span>
+                <span class="poster-username" routerLink="/user/{{post.userDTO.username}}">@{{post.userDTO.username }}</span>
+                <span class="date-posted">Aug 21</span>
+            </div>
+            <div class="post-content" >
+                <p>{{post.description}}</p>
+                <div *ngIf="post.photoLink != '' && post.photoLink != null" class="image-container">
+                    <img src={{post.photoLink}}>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-actions">
+        <div>
+            <svg>
+                <use href="assets/images/comment-icon.svg#comment-icon"></use>
+            </svg>
+            <span >{{post.numOfComments}}</span>
+        </div>
+        <div>
+            <svg (click)="likePost(post)">
+                <use [ngClass]="{'red-like': post.liked}" href="assets/images/favorite-icon.svg#favorite-icon"></use>
+            </svg>
+            <span (click)="getUsersWhoLiked(post.postId)">{{post.numOfLikes}}</span>
+        </div>
+        <div (click)="savePost(post)">
+            <svg>
+                <use [ngClass]="{'white-saved': post.saved}" href="assets/images/bookmark-icon.svg#bookmark-icon"></use>
+            </svg>
+        </div>
+    </div>
+</div> 

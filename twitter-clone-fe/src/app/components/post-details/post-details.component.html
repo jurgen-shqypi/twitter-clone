@@ -1,0 +1,62 @@
+<div class="header">
+    <svg class="backIcon" (click)="goBack()"><use  href="assets/images/back-icon.svg#back-icon"></use></svg>
+    <span>Tweet</span>
+</div>
+<div class="post" >
+    <div class="post-info">
+        <div class="poster-profile-pic">
+            <img src="{{post.userDTO.profilePicture}}">
+        </div>
+        <div class="post-text">
+            <div class="user-details">
+                <span class="poster-name">{{post.userDTO.name}}</span>
+                <span class="poster-username">@{{post.userDTO.username }}</span>
+                <span class="date-posted">Aug 21</span>
+            </div>
+            <div class="post-content" >
+                <p>{{post.description}}</p>
+                <div *ngIf="post.photoLink != '' && post.photoLink != null" class="image-container">
+                    <img src={{post.photoLink}}>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-actions">
+        <div>
+            <svg>
+                <use href="assets/images/comment-icon.svg#comment-icon"></use>
+            </svg>
+            <span >{{post.numOfComments}}</span>
+        </div>
+        <div>
+            <svg (click)="likePost(post)">
+                <use [ngClass]="{'red-like': post.liked}" href="assets/images/favorite-icon.svg#favorite-icon"></use>
+            </svg>
+            <span (click)="getUsersWhoLiked(post.postId)">{{post.numOfLikes}}</span>
+        </div>
+        <div (click)="savePost(post)">
+            <svg>
+                <use [ngClass]="{'white-saved': post.saved}" href="assets/images/bookmark-icon.svg#bookmark-icon"></use>
+            </svg>
+        </div>
+    </div>
+    <div class="comment-area">
+        <div class="user-profile">
+            <img src="{{userDetails.profilePicture}}" class="user-profile-pic">
+        </div>
+        <form [formGroup]="commentFormGroup" class="post-form" (ngSubmit)="postTweet()">
+            <textarea formControlName="description" cdkTextareaAutosize #autosize="cdkTextareaAutosize"cdkAutosizeMinRows="1" cdkAutosizeMaxRows="8" maxlength="250" placeholder="What's happening?"></textarea>
+            <img src="" id="post-pic">
+            <div class="post-submit">
+                <label for='imgupload'>
+                    <input type="file" id="imgupload" style="display: none;" accept="image/*"  (change)="onImageUpload($event)"/>
+                    <svg><use href="assets/images/image-upload-icon.svg#image-upload-icon"></use></svg>
+                </label>    
+                <button type="submit">Reply</button>
+            </div>
+        </form>
+    </div>
+    <div class="comments" *ngFor="let comment of post.comments">
+        <app-post [post]="comment"></app-post>
+    </div>
+</div> 

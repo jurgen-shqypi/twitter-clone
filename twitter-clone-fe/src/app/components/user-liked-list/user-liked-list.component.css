@@ -1,0 +1,79 @@
+.user-likes-container {
+    display: flex;
+    flex-direction: column;
+    max-height: 80vh;
+    max-width:30vw;
+    min-width: 30vw;
+}
+
+.user-likes-header {
+    display: flex;
+    align-items: center;
+}
+
+.results {
+    background-color: black;
+    display: flex;
+    width: 30vw;
+    height: 10vh;
+}
+
+.results:hover {
+    background-color: rgb(24, 25, 25);
+}
+
+img {
+    margin: 1em;
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 1em;
+}
+
+.name {
+    font-weight: 900;
+    color: white;
+}
+
+.username {
+    color: rgb(116, 119, 122);
+}
+
+.close-button {
+    outline: none;
+    background-color: black;
+    color: #C7CACB;
+    align-self: flex-start;
+    margin: 10px;
+    font-family: Helvetica, Arial;
+    font-size: 15px;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+}
+.close-button:hover {
+    background-color: rgb(24, 25, 25);
+}
+
+.user-likes-header > span {
+    margin-left: 25%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    color: white;
+}
+
+::ng-deep .mat-dialog-container{
+    padding: 0 !important;
+    background-color: black !important;
+    border-radius: 20px 20px 20px;
+}
+
+::ng-deep .cdk-overlay-container {
+    background-color: rgba(36, 45, 42, 0.6) !important; 
+}
