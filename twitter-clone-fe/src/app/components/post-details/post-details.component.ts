@@ -32,7 +32,6 @@ export class PostDetailsComponent implements OnInit {
     this.postService.getPostById(this.route.snapshot.paramMap.get('postId')!).subscribe(
       data => {
         this.post = data;
-        console.log(data)
       }
     );
     this.commentRequest = {
@@ -48,14 +47,12 @@ export class PostDetailsComponent implements OnInit {
     if(!post.liked){
       this.postService.likePost(post).subscribe(
         data => {
-          console.log(data);
           post.liked = true;
         }
       )
     } else {
       this.postService.removeLike(post).subscribe(
         data => {
-          console.log(data);
           post.liked = false;
         }
       )
@@ -67,14 +64,12 @@ export class PostDetailsComponent implements OnInit {
     if(!post.saved){
       this.postService.savePost(post).subscribe(
         data => {
-          console.log(data);
           post.saved = true;
         }
       )
     } else {
       this.postService.removeSave(post).subscribe(
         data => {
-          console.log(data);
           post.saved = false;
         }
       )
@@ -101,7 +96,6 @@ export class PostDetailsComponent implements OnInit {
   postTweet() {
     this.commentRequest.description = this.commentFormGroup.get('description')?.value;
     this.commentRequest.parentPostId = this.post.postId;
-    console.log(this.postImage);
     const formData = new FormData()
     formData.append("file", this.postImage)
     formData.append('postRequestDTO', new Blob([JSON
@@ -110,7 +104,6 @@ export class PostDetailsComponent implements OnInit {
     }));
     this.postService.postTweet(formData).subscribe(
       data => {
-        console.log(data)
         this.commentFormGroup.reset()
       }
     );

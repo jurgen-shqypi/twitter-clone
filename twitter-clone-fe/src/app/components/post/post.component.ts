@@ -23,14 +23,12 @@ export class PostComponent implements OnInit {
     if(!post.liked){
       this.postService.likePost(post).subscribe(
         data => {
-          console.log(data);
           post.liked = true;
         }
       )
     } else {
       this.postService.removeLike(post).subscribe(
         data => {
-          console.log(data);
           post.liked = false;
         }
       )
@@ -42,14 +40,12 @@ export class PostComponent implements OnInit {
     if(!post.saved){
       this.postService.savePost(post).subscribe(
         data => {
-          console.log(data);
           post.saved = true;
         }
       )
     } else {
       this.postService.removeSave(post).subscribe(
         data => {
-          console.log(data);
           post.saved = false;
         }
       )

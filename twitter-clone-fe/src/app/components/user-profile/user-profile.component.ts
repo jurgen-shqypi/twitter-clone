@@ -108,7 +108,6 @@ export class UserProfileComponent implements OnInit {
       data => {
           this.posts = data;
           this.postsArrived = true;
-          console.log(data)
       }
     )
   

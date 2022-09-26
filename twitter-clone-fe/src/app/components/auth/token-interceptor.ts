@@ -14,7 +14,6 @@ export class TokenInterceptor implements HttpInterceptor{
     
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         if(this.authService.getAccessToken() === null || this.authService.getAccessToken() === "" || req.url.includes("token")){
-            console.log("dumming")
             return next.handle(req);
         }
         req = this.addToken(req, this.authService.getAccessToken()!);
@@ -38,7 +37,6 @@ export class TokenInterceptor implements HttpInterceptor{
                 })
             )
         } else {
-            console.log("malaka")
             return this.refreshTokenSubject.pipe(
               filter(token => token != null),
               take(1),

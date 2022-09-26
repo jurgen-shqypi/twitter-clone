@@ -39,7 +39,6 @@ export class ComposeTweetComponent implements OnInit {
 
   composeTweet() {
     this.postRequest.description = this.composeTweetFormGroup.get('description')?.value;
-    console.log(this.postImage);
     const formData = new FormData()
     formData.append("file", this.postImage)
     formData.append('postRequestDTO', new Blob([JSON
@@ -48,7 +47,6 @@ export class ComposeTweetComponent implements OnInit {
     }));
     this.postService.postTweet(formData).subscribe(
       data => {
-        console.log(data)
         this.dialogRef.close();
       }
     );

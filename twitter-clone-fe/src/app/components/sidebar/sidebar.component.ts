@@ -29,7 +29,6 @@ export class SidebarComponent implements OnInit {
     this.userService.searchUser(keyword).subscribe(
       data => {
         this.userResults = data;
-        console.log(this.userResults);
       }
     )
   }
@@ -37,7 +36,6 @@ export class SidebarComponent implements OnInit {
   getMostFollowed() {
     this.userService.getMostFollowed().subscribe(
       data => {
-        console.log(data)
         this.mostFollowedUsersResults = data;
       }
     )

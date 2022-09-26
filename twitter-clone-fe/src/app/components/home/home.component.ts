@@ -40,7 +40,6 @@ export class HomeComponent implements OnInit {
 
   postTweet() {
     this.postRequest.description = this.postFormGroup.get('description')?.value;
-    console.log(this.postImage);
     const formData = new FormData()
     formData.append("file", this.postImage)
     formData.append('postRequestDTO', new Blob([JSON
@@ -49,7 +48,6 @@ export class HomeComponent implements OnInit {
     }));
     this.postService.postTweet(formData).subscribe(
       data => {
-        console.log(data)
         this.postFormGroup.reset()
       }
     );

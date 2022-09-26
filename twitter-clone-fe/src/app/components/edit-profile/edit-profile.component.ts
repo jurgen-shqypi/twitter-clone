@@ -51,18 +51,15 @@ export class EditProfileComponent implements OnInit {
     this.editRequest.dateOfBirth = this.editProfileFormGroup.get('dateOfBirth')?.value;
     this.editRequest.profilePicture = this.editProfileFormGroup.get('profilePhoto')?.value;
     this.editRequest.headerPicture = this.editProfileFormGroup.get('headerPhoto')?.value;
-    console.log(this.editRequest)
     formData.append('editRequestDTO', new Blob([JSON
       .stringify(this.editRequest)], {
       type: 'application/json'
     }));
     if(this.headerPhotoFile != null){
       formData.append("headerPicture", this.headerPhotoFile);
-      console.log("adding header photo")
     }
     if(this.profilePhotoFile != null){
       formData.append("profilePicture", this.profilePhotoFile);
-      console.log("adding header photo")
     }
 
     this.userService.editProfileDetails(formData).subscribe(

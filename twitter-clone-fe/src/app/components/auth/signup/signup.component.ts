@@ -43,7 +43,6 @@ export class SignupComponent implements OnInit {
     this.signupRequest.password = this.signupFormGroup.get('password')?.value;
     this.signupRequest.name = this.signupFormGroup.get('name')?.value;
     this.signupRequest.dateOfBirth = this.signupFormGroup.get('dateOfBirth')?.value;
-    console.log(this.signupRequest);
     this.authService.signup(this.signupRequest);
   }
 

@@ -32,7 +32,6 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    console.log("Logging in!")
     this.loginRequest.username = this.loginFormGroup.get('username')?.value;
     this.loginRequest.password = this.loginFormGroup.get('password')?.value;
     this.authService.login(this.loginRequest);

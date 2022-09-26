@@ -51,7 +51,6 @@ export class AuthService {
           });
         },
         error: err => {
-          console.log(err)
           this.toast.error("Credentials wrong!")
         }
       }
@@ -108,7 +107,6 @@ export class AuthService {
     return this.httpClient.post<TokenDTO>(refreshTokenLink,
       tokenDTO)
       .pipe(tap(response => {
-        console.log("refresh functions")
         this.removeTokens();
         this.setTokens(response);
       }))
@@ -147,7 +145,6 @@ export class AuthService {
 
   changePasswordRequest(passwordChangeDTO: PasswordChangeDTO) {
     const url: string = environment.serverUrl + 'auth/change-password';
-    console.log(passwordChangeDTO)
     return this.httpClient.post<PasswordChangeDTO>(url, passwordChangeDTO);
   }
 }
